@@ -129,7 +129,7 @@
   .star-color {
     color: $yellow;
   }
-  i {
+  .green {
     color: $green;
   }
 }
@@ -153,5 +153,7 @@
   right: -20px;
   top: 15px;
   width: 40px;
+}
+.fa-trash {
   color: $red;
 }

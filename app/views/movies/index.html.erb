@@ -2,7 +2,9 @@
   <h2>Title</h2>
   <div class="featured__buttons">
     <button class="button__play"><i class="fas fa-play"></i>Play</button>
-    <button>My List</button>
+    <%= link_to new_list_path do  %>
+      <button>New List </button>
+    <% end %>
   </div>
   <div class="featured__description">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique

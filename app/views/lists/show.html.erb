@@ -1,0 +1,24 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container text-center">
+    <h1><strong><%= @list.name %></strong>  </h1>
+  </div>
+</div>
+<div class="container mt-3">
+  <div class="cards">
+    <% @my_list_movies.each do |movie| %>
+      <div class="card-category">
+        <div class="card-trip bg-dark">
+          <%= image_tag movie.poster_url, alt: "text" %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= movie.title %>  <%= movie.rating %><i class="fa-solid fa-star star-color m-1"></i></h2>
+              <p><%= movie.overview %></p>
+            </div>
+            <h2 class="card-trip-pricing"><i class="fa-solid fa-trash"></i></h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
-  def index
-    
-    redirect_to  root_path(@lists)
+  def show
+    @list = List.find(params[:id])
+    @my_list_movies = @list.movies
   end
 end

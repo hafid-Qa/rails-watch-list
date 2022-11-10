@@ -1,21 +1,21 @@
 <div class="featured">
   <h2>Title</h2>
-  <div class="featured__buttons">
-    <button class="button__play"><i class="fas fa-play"></i>Play</button>
+  <div class="featured-buttons">
+    <button class="button-play"><i class="fas fa-play"></i>Play</button>
     <%= link_to new_list_path do  %>
-      <button>New List </button>
+      <button>New List</button>
     <% end %>
   </div>
-  <div class="featured__description">
+  <div class="featured-description">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique
     magna magna, vit...
   </div>
 </div>
-<div class="netflixOriginals">
-  <div class="original__header">
+<div class="netflix-originals">
+  <div class="original-header">
     <h2>NETFLIX ORIGINALS</h2>
   </div>
-  <div class="original__movies">
+  <div class="original-movies">
     <!-- Orignal Movies List Here -->
     <% @movies.each do |movie| %>
       <%= image_tag  movie.poster_url , alt: "text" , class: "movie-img" %>
@@ -23,10 +23,10 @@
   </div>
 </div>
 <div class="movies">
-  <div class="movies__header">
+  <div class="movies-header">
     <h2>Watch list</h2>
   </div>
-  <div id="wishlist" class="movies__container">
+  <div id="wishlist" class="movies-container">
     <% @lists.each do |list| %>
       <%= link_to list_path(list)  do %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
@@ -35,16 +35,16 @@
       <% end %>
     <% end %>
   </div>
-  <div class="movies__header">
+  <div class="movies-header">
     <h2>Trending Now</h2>
   </div>
-  <div id="trending" class="movies__container">
+  <div id="trending" class="movies-container">
     <!-- Trending Movies List Here -->
   </div>
-  <div class="movies__header">
+  <div class="movies-header">
     <h2>Top Rated</h2>
   </div>
-  <div id="top_rated" class="movies__container">
+  <div id="top_rated" class="movies-container">
     <!-- Top Rated Movies List Here -->
   </div>
 </div>

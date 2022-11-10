@@ -1,4 +1,4 @@
-.original__movies {
+.original-movies {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 50px;
@@ -22,32 +22,27 @@
   }
 }
 
-.netflixOriginals {
+.netflix-originals {
   h2 {
     padding-left: 30px;
   }
 }
-img {
-  width: 100px;
-}
+// img {
+//   width: 100px;
+// }
 
-.movies__container {
+.movies-header {
+  h2 {
+    padding-left: 30px;
+  }
+}
+.movies-container {
   padding-left: 50px;
   display: flex;
   overflow-x: scroll;
   overflow: hidden;
 
-  // img {
-  //   transition: all 0.2s ease-out;
-  //   cursor: pointer;
-  //   margin-right: 10px;
-  //   // width: 200px;
-  //   &:hover {
-  //     transform: scale(1.1);
-  //   }
-  // }
-
-  .card-category {
+  div {
     background-size: cover;
     background-position: center;
     height: 180px;
@@ -61,11 +56,10 @@ img {
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     margin-right: 10px;
-    width: 100px;
+    width: 200px;
     transition: all 0.2s ease-out;
     cursor: pointer;
     margin-right: 10px;
-    // width: 200px;
     &:hover {
       transform: scale(1.1);
     }

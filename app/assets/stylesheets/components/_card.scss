@@ -8,13 +8,12 @@
   img {
     margin-right: 10px;
     height: 250px;
-    // width: auto;
+    width: auto;
     transition: all 0.2s ease-out;
     cursor: pointer;
     width: 100px;
     &:hover {
       transform: scale(1.1);
-      // width: 100px;
     }
   }
 
@@ -26,5 +25,25 @@
 .netflixOriginals {
   h2 {
     padding-left: 30px;
+  }
+}
+img {
+  width: 100px;
+}
+
+.movies__container {
+  padding-left: 50px;
+  display: flex;
+  overflow-x: scroll;
+  overflow: hidden;
+
+  img {
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    margin-right: 10px;
+    // width: 200px;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }

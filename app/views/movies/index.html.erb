@@ -20,21 +20,25 @@
     <% end %>
   </div>
 </div>
-<%# <div class="movies">
-    <div class="movies__header">
-      <h2>Wishlist</h2>
-    </div>
-    <div id="wishlist" class="movies__container"></div>
-    <div class="movies__header">
-      <h2>Trending Now</h2>
-    </div>
-    <div id="trending" class="movies__container">
-      <!-- Trending Movies List Here -->
-    </div>
-    <div class="movies__header">
-      <h2>Top Rated</h2>
-    </div>
-    <div id="top_rated" class="movies__container">
-      <!-- Top Rated Movies List Here -->
-    </div>
-  </div> %>
+<div class="movies">
+  <div class="movies__header">
+    <h2>Wishlist</h2>
+  </div>
+  <div id="wishlist" class="movies__container">
+    <% @movies.each do |movie| %>
+      <%= image_tag  movie.poster_url , alt: "text" , class: "movie-img" %>
+    <% end %>
+  </div>
+  <div class="movies__header">
+    <h2>Trending Now</h2>
+  </div>
+  <div id="trending" class="movies__container">
+    <!-- Trending Movies List Here -->
+  </div>
+  <div class="movies__header">
+    <h2>Top Rated</h2>
+  </div>
+  <div id="top_rated" class="movies__container">
+    <!-- Top Rated Movies List Here -->
+  </div>
+</div>

@@ -25,9 +25,9 @@
     <h2>Watch list</h2>
   </div>
   <div id="wishlist" class="movies__container">
-    <% @movies.each do |movie| %>
+    <% @lists.each do |list| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        Breakfast
+        <%= list.name %>
       </div>
     <% end %>
   </div>

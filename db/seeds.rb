@@ -6,16 +6,16 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'open-uri'
+Bookmark.destroy_all
 Movie.destroy_all
-# List.destroy_all
+List.destroy_all
 
 # the Le Wagon copy of the API
 url = 'http://tmdb.lewagon.com/movie/top_rated'
 response = JSON.parse(URI.open(url).read)
 
 response['results'].each do |movie_hash|
-  puts "creating #{movie_hash["title"]}"
-  p movie_hash
+  puts "creating #{movie_hash['title']}"
   # create an instance with the hash
   Movie.create!(
     title: movie_hash['title'],
@@ -24,5 +24,15 @@ response['results'].each do |movie_hash|
     rating: movie_hash['vote_average']
   )
 end
- 
-puts "completed "
+
+['Drama', 'All time favourite', 'Girl Power'].each do |x|
+  List.create!(name: x)
+end
+
+9.times do
+  bookmark = Bookmark.create(comment: ['great movie', ' mama movie'].sample)
+  bookmark.movie = Movie.all.sample
+  bookmark.list = List.all.sample
+  bookmark.save!
+end
+puts 'completed '

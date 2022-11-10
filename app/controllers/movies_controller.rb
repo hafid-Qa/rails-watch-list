@@ -3,4 +3,6 @@ class MoviesController < ApplicationController
     @movies = Movie.all
     @lists = List.all
   end
+
+ 
 end

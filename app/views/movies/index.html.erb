@@ -8,15 +8,19 @@
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique
     magna magna, vit...
   </div>
-  <div class="netflixOriginals">
-    <div class="original__header">
-      <h2>NETFLIX ORIGINALS</h2>
-    </div>
-    <div class="original__movies">
-      <!-- Orignal Movies List Here -->
-    </div>
+</div>
+<div class="netflixOriginals">
+  <div class="original__header">
+    <h2>NETFLIX ORIGINALS</h2>
   </div>
-  <div class="movies">
+  <div class="original__movies">
+    <!-- Orignal Movies List Here -->
+    <% @movies.each do |movie| %>
+      <%= image_tag  movie.poster_url , alt: "text" , class: "movie-img" %>
+    <% end %>
+  </div>
+</div>
+<%# <div class="movies">
     <div class="movies__header">
       <h2>Wishlist</h2>
     </div>
@@ -33,4 +37,4 @@
     <div id="top_rated" class="movies__container">
       <!-- Top Rated Movies List Here -->
     </div>
-  </div>
+  </div> %>

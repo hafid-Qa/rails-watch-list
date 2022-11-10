@@ -1,0 +1,21 @@
+.original__movies img {
+  margin-right: 10px;
+  height: 250px;
+  width: auto;
+}
+
+.original__movies img,
+.movies__container img {
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.original__movies img:hover,
+.movies__container img:hover {
+  transform: scale(1.1);
+}
+
+.movies__container img {
+  margin-right: 10px;
+  width: 200px;
+}

@@ -29,7 +29,7 @@ end
   List.create!(name: x)
 end
 
-9.times do
+5.times do
   bookmark = Bookmark.create(comment: ['great movie', ' mama movie'].sample)
   bookmark.movie = Movie.all.sample
   bookmark.list = List.all.sample

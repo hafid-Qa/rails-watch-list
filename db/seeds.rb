@@ -11,14 +11,15 @@ Movie.destroy_all
 List.destroy_all
 
 # the Le Wagon copy of the API
-url = 'http://tmdb.lewagon.com/movie/top_rated'
+
+url = "https://api.themoviedb.org/3/discover/tv?api_key=#{ENV['APIKEY']}&with_networks=213"
 response = JSON.parse(URI.open(url).read)
 
 response['results'].each do |movie_hash|
-  puts "creating #{movie_hash['title']}"
+  puts "creating #{movie_hash['name']}"
   # create an instance with the hash
   Movie.create!(
-    title: movie_hash['title'],
+    title: movie_hash['name'],
     poster_url: 'https://image.tmdb.org/t/p/w500' + movie_hash['poster_path'],
     overview: movie_hash['overview'],
     rating: movie_hash['vote_average']

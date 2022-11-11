@@ -25,10 +25,10 @@ default: &default
 development:
   <<: *default
   database: rails_watch_list_development
-  host: localhost
-  port: 5432
-  username: hafid
-  password: 123456
+  host: <%= ENV['host']%>
+  port: <%= ENV['port']%>
+  username: <%= ENV['username']%>
+  password: <%= ENV['password']%>
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is

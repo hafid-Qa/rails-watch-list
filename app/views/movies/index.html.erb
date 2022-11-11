@@ -31,11 +31,14 @@
     </div>
     <div id="wishlist" class="movies-container">
       <% @lists.each do |list| %>
-        <%= link_to list_path(list)  do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>">
+          <%= link_to list_path(list) , class: "list-link" do %>
             <%= list.name %>
-          </div>
-        <% end %>
+          <% end %>
+          <%= link_to list_path(list),data: {turbo_method: :delete, turbo_confirm: "Removing # "} do %>
+            <i class="fa-solid fa-trash card-remove-link"></i>
+          <% end %>
+        </div>
       <% end %>
     </div>
     <div class="movies-header">

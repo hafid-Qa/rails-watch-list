@@ -6,13 +6,14 @@
 <div class="container d-flex align-items-center flex-column mt-4">
   <div class="m-3" >
     <div class="d-flex align-items-center flex-column ">
-      <%= link_to "Add Movie", edit_list_path , class: "btn btn-success" %>
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Add movie </button>
+      <h3 class="m-3">Recommend movies </h3>
     </div>
     <div  class="original-movies">
       <% @movies.each do |movie| %>
         <%= image_tag  movie.poster_url , alt: "text" , class: "movie-img" %>
       <% end %>
-      <!-- Top Rated Movies List Here -->
     </div>
   </div>
   <div class="cards">
@@ -36,36 +37,34 @@
                 <% end %>
               </div>
               <h2 class="card-trip-pricing m-1">
-                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <%= link_to new_list_bookmark_path(@list) do %>
                   <i class="fa-solid fa-circle-plus green"></i>
-                </button>
-                <%# <%= link_to new_list_bookmark_path(@list) do %>
-                  <%# <% end %>
-                </h2>
-              </div>
-              <i class="fa-solid fa-trash card-trip-user"></i>
+                <% end %>
+              </h2>
             </div>
+            <i class="fa-solid fa-trash card-trip-user"></i>
           </div>
         </div>
-      <% end %>
-    </div>
-    <!-- Button trigger modal -->
-    <!-- Modal -->
-    <div class="modal fade modal-body" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <%# <%= render 'bookmarks/form' %> %>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+      </div>
+    <% end %>
+  </div>
+  <!-- Button trigger modal -->
+  <!-- Modal -->
+  <div class="modal fade modal-body" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= render 'bookmarks/form' %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
+</div>

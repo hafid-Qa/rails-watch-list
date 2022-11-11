@@ -3,6 +3,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @my_list_movies = @list.movies
     @movies = Movie.all
+    @bookmark = Bookmark.new
   end
 
   def new
@@ -23,10 +24,10 @@ class ListsController < ApplicationController
     @bookmark = Bookmark.new
   end
 
-  def update
-    @list = List.find(params[:id])
-    redirect_to list_path(@list)
-  end
+  # def update
+  #   @list = List.find(params[:id])
+  #   redirect_to list_path(@list)
+  # end
 
   private
 

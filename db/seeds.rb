@@ -25,14 +25,14 @@ response['results'].each do |movie_hash|
   )
 end
 
-['Drama', 'All time favourite', 'Girl Power'].each do |x|
-  List.create!(name: x)
-end
+# ['Drama', 'All time favourite', 'Girl Power'].each do |x|
+#   List.create!(name: x)
+# end
 
-5.times do
-  bookmark = Bookmark.create(comment: ['great movie', ' mama movie'].sample)
-  bookmark.movie = Movie.all.sample
-  bookmark.list = List.all.sample
-  bookmark.save!
-end
+# 5.times do
+#   bookmark = Bookmark.create(comment: ['great movie', ' mama movie'].sample)
+#   bookmark.movie = Movie.all.sample
+#   bookmark.list = List.all.sample
+#   bookmark.save!
+# end
 puts 'completed '

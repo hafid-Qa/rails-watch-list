@@ -1,8 +1,7 @@
 <div class="p-5 m-4 bg-light rounded-3 text-dark">
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.input :comment %>
-    <%= f.association :movie %>
-    <%= f.button :submit, class: "btn btn-success" %>
+    <%= f.association :movie , include_blank: false, collection: @not_in_my_list %>
+    <%= f.button :submit,"Submit", class: "btn btn-success" %>
   <% end %>
 </div>
-

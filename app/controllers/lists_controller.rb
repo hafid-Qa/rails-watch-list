@@ -4,6 +4,7 @@ class ListsController < ApplicationController
     @my_list_movies = @list.movies
     @movies = Movie.all
     @bookmark = Bookmark.new
+    @not_in_my_list = Movie.where.not(id: @my_list_movies).order(title: :asc)
   end
 
   def new
@@ -23,11 +24,6 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @bookmark = Bookmark.new
   end
-
-  # def update
-  #   @list = List.find(params[:id])
-  #   redirect_to list_path(@list)
-  # end
 
   private
 

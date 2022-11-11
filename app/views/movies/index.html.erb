@@ -2,49 +2,67 @@
   <h2>Title</h2>
   <div class="featured-buttons">
     <button class="button-play"><i class="fas fa-play"></i>Play</button>
-    <%= link_to new_list_path do  %>
-      <button>New List</button>
-    <% end %>
+    <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+      New list
+    </button>
+    <%# <%= link_to new_list_path do  %>
+      <%# <button>New List</button> %>
+      <%# <% end %>
+    </div>
+    <div class="featured-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique
+      magna magna, vit...
+    </div>
   </div>
-  <div class="featured-description">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique
-    magna magna, vit...
-  </div>
-</div>
-<div class="netflix-originals">
-  <div class="original-header">
-    <h2>NETFLIX ORIGINALS</h2>
-  </div>
-  <div class="original-movies">
-    <!-- Orignal Movies List Here -->
-    <% @movies.each do |movie| %>
-      <%= image_tag  movie.poster_url , alt: "text" , class: "movie-img" %>
-    <% end %>
-  </div>
-</div>
-<div class="movies">
-  <div class="movies-header">
-    <h2>Watch list</h2>
-  </div>
-  <div id="wishlist" class="movies-container">
-    <% @lists.each do |list| %>
-      <%= link_to list_path(list)  do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>">
-          <%= list.name %>
-        </div>
+  <div class="netflix-originals">
+    <div class="original-header">
+      <h2>NETFLIX ORIGINALS</h2>
+    </div>
+    <div class="original-movies">
+      <!-- Orignal Movies List Here -->
+      <% @movies.each do |movie| %>
+        <%= image_tag  movie.poster_url , alt: "text" , class: "movie-img" %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-  <div class="movies-header">
-    <h2>Trending Now</h2>
+  <div class="movies">
+    <div class="movies-header">
+      <h2>Watch list</h2>
+    </div>
+    <div id="wishlist" class="movies-container">
+      <% @lists.each do |list| %>
+        <%= link_to list_path(list)  do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>">
+            <%= list.name %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="movies-header">
+      <h2>Trending Now</h2>
+    </div>
+    <div id="trending" class="movies-container">
+      <!-- Trending Movies List Here -->
+    </div>
+    <div class="movies-header">
+      <h2>Top Rated</h2>
+    </div>
+    <div id="top_rated" class="movies-container">
+      <!-- Top Rated Movies List Here -->
+    </div>
   </div>
-  <div id="trending" class="movies-container">
-    <!-- Trending Movies List Here -->
+  <!-- Button trigger modal -->
+  <!-- Modal -->
+  <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= render 'lists/form' %>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="movies-header">
-    <h2>Top Rated</h2>
-  </div>
-  <div id="top_rated" class="movies-container">
-    <!-- Top Rated Movies List Here -->
-  </div>
-</div>

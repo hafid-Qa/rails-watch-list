@@ -18,10 +18,10 @@
     <div class="original-header">
       <h2>NETFLIX ORIGINALS</h2>
     </div>
-    <div class="original-movies">
+    <div class="original-movies" data-controller="hello" data-action="mousemove->hello#next">
       <!-- Orignal Movies List Here -->
       <% @movies.each do |movie| %>
-        <%= image_tag  movie.poster_url , alt: "text" , class: "movie-img" %>
+        <%= image_tag  movie.poster_url , alt: "text" , class: "movie-img",data: { action: "hello#next" } %>
       <% end %>
     </div>
   </div>
